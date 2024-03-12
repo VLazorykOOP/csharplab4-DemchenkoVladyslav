@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab4CSharp
 {
-    internal class UserClass
+    class VectorUshort
     {
-        public string Name { get; set; }
+        protected ushort[] ArrayUShort;
+        protected uint num;
+        protected uint codeError;
+        static uint num_vs;
+
     }
-}
