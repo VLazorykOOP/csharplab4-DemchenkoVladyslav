@@ -275,6 +275,229 @@ namespace Lab4CSharp
             }
             return result;
         }
+        public static VectorUshort operator %(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
 
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                if (v2.ArrayUShort[i] != 0)
+                    result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] % v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator %(VectorUshort vector, ushort scalar)
+        {
+            if (scalar == 0)
+            {
+                vector.codeError = 1;
+                return vector;
+            }
+
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] % scalar);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator |(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
+
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] | v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator |(VectorUshort vector, ushort scalar)
+        {
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] | scalar);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator ^(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
+
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] ^ v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator ^(VectorUshort vector, ushort scalar)
+        {
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] ^ scalar);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator &(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
+
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] & v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator &(VectorUshort vector, ushort scalar)
+        {
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] & scalar);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator >>(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
+
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] >> v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator >>(VectorUshort vector, ushort scalar)
+        {
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] >> scalar);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator <<(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                v1.codeError = 1;
+                return v1;
+            }
+
+            VectorUshort result = new VectorUshort(v1.num);
+            for (int i = 0; i < v1.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(v1.ArrayUShort[i] << v2.ArrayUShort[i]);
+            }
+            return result;
+        }
+
+        public static VectorUshort operator << (VectorUshort vector, ushort scalar)
+        {
+            VectorUshort result = new VectorUshort(vector.num);
+            for (int i = 0; i < vector.num; i++)
+            {
+                result.ArrayUShort[i] = (ushort)(vector.ArrayUShort[i] << scalar);
+            }
+            return result;
+        }
+        public static bool operator ==(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num != v2.num)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < v1.num; i++)
+            {
+                if (v1.ArrayUShort[i] != v2.ArrayUShort[i])
+                    return false;
+            }
+            return true;
+        }
+
+        public static bool operator !=(VectorUshort v1, VectorUshort v2)
+        {
+            return !(v1 == v2);
+        }
+        public static bool operator >(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num > v2.num)
+            {
+                return true;
+            }
+
+            for (int i = 0; i < v1.num; i++)
+            {
+                if (v1.ArrayUShort[i] <= v2.ArrayUShort[i])
+                    return false;
+            }
+            return true;
+        }
+
+        public static bool operator >=(VectorUshort v1, VectorUshort v2)
+        {
+            if (v1.num > v2.num)
+            {
+                return true;
+            }
+            if (v1.num < v2.num)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < v1.num; i++)
+            {
+                if (v1.ArrayUShort[i] < v2.ArrayUShort[i])
+                    return false;
+            }
+            return true;
+        }
+
+        public static bool operator <(VectorUshort v1, VectorUshort v2)
+        {
+            return !(v1 >= v2);
+        }
+
+        public static bool operator <=(VectorUshort v1, VectorUshort v2)
+        {
+            return !(v1 > v2);
+        }
     }
 }
