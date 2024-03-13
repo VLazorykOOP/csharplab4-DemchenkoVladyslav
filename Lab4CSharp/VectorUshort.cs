@@ -39,6 +39,7 @@ namespace Lab4CSharp
 
         ~VectorUshort()
         {
+            num_vs--;
             Console.WriteLine("VectorUshort object is destroyed.");
         }
         public void Input()

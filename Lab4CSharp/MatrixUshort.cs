@@ -67,7 +67,7 @@ namespace Lab4CSharp
 
         public void Display()
         {
-            Console.WriteLine("Vector elements:");
+            Console.WriteLine("Matrix elements:");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < m; j++)
@@ -89,7 +89,7 @@ namespace Lab4CSharp
             }
         }
 
-        public static int CountVectors()
+        public static int CountMatrixs()
         {
             return num_m;
         }
